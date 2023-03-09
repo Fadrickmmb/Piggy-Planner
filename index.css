@@ -1,0 +1,927 @@
+body {
+    background-color: #ffa3b2;
+    overflow: hidden;
+}
+
+.top-nav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    overflow: hidden;
+    height: 52px; 
+}
+
+.white-piggy-font {
+    position: absolute;
+    margin-top: 0.5vw;
+    margin-left: 2vw;
+}
+
+.white-login {
+    position: relative;
+    left: 92%;  
+    top: 9%;  
+}
+
+.piggy-logo {
+    
+    float: left;
+    margin-top: 5vw;
+    margin-left: 5vw;
+    width: 35vw;
+    height: auto;
+}
+
+.piggy-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.piggy-title {
+    
+    position: absolute;
+    margin-left: 42vw;
+    margin-top: 4vw;
+    width: 35vw;
+    height: auto;     
+}
+
+.piggy-title img {
+    width: 100%;
+    height: auto;
+}
+
+.piggy-title-font {
+    margin-left: 5vw;
+}
+
+.start-button-div {
+    
+    position: absolute;
+    margin-top: 4vw;
+    margin-left: 8vw;
+    width: 22vw;
+    height: auto;
+    
+}
+
+.start-button {
+    background-color: white;
+    text-align: center;
+    font-size: 2.3vw;
+    width: 22vw;
+    height: 3.6vw;
+    border-radius: 0.3em;
+    border: 0.25vw solid;   
+} 
+
+.start-button:hover {
+    background-color: #fac03d;
+    transform: scale(1.1);    
+}
+
+/*
+.sleeping-piggy {
+    float: left;
+    margin-top: 120px;
+    margin-left: 70px;
+}
+
+.perfil-div {
+    position: absolute;
+    margin-left: 550px;
+    margin-top: 10px;
+}
+
+.profile-font {
+    margin-left: 80px;
+}
+
+
+.perfil-text {
+    font-family: sans-serif;
+    position: absolute;
+    margin-left: 60px;
+
+} 
+
+.cadastro {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 50px;
+}
+
+.cadastro input {
+    background-color: #ffa3b2;
+    text-indent: 20px;
+    text-size-adjust: 0.8em;
+    width: 250px;
+    height: 35px;
+    border-radius: 0.3em;
+    border: 3.5px solid;
+    margin-top: 5px;
+    margin-right: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.95em;
+    
+}
+
+::placeholder {
+    color: black;
+}
+
+.terms-paragraph {
+    position: absolute;
+    size: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    
+}
+
+.terms-checkbox {
+    width: 15px;
+    height: 15px;
+}
+
+#send-button {
+    background-color: white;
+    text-align: center;
+    font-size: 20px;
+    width: 200px;
+    height: 40px;
+    border-radius: 0.3em;
+    border: 3px solid;
+    margin-top: 25px;
+    margin-left: 150px;
+}
+
+.login-piggy {
+    float: left;
+    margin-left: 50px;
+}
+
+.login-div {
+    position: absolute;
+    margin-top: 120px;
+    margin-left: 680px;
+}
+
+.login-font {
+    margin-bottom: 30px;
+}
+
+.login-div input {
+    background-color: #ffa3b2;
+    margin-top: 5px;
+    margin-left: 15px;
+    width: 350px;
+    height: 35px;
+    text-indent: 20px;
+    text-size-adjust: 0.8em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.95em;
+    border-radius: 0.7em;
+    border: 4px solid;
+    padding-top: 3px;
+}
+
+.enter-button {
+    margin-top: 15px;
+    margin-left: 15px;
+    background-color: white;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 0.3em;
+    border: 3px solid;
+    width: 200px;
+    height: 30px;
+}
+
+.signup-paragraph {
+    margin-top: 10px;
+    margin-left: 17px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+}
+*/
+.hey-piggy {    
+    float: left;
+    margin-top: 2vw;
+    margin-left: 3vw;
+    width: 37vw;
+    height: auto;    
+}
+
+.hey-piggy img {
+    width: 100%;
+    height: auto;
+}
+
+.your-name {    
+    position: absolute;
+    width: 26vw;
+    height: auto;
+    margin-top: 9vw;
+    margin-left: 50vw;
+}
+
+.your-name-font {    
+    width: 100%;
+    height: auto;
+    margin-top: 3.8vw;
+}
+
+#your-name-input {
+    background-color: #ffa3b2;
+    width: 22vw;
+    height: 2.6vw;
+    border-radius: 1vw;
+    border: 0.3vw solid;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 1.5vw;
+    text-align: center;
+    font-size: 1.5vw;
+    font: bold;
+    margin-left: 1.2vw;
+}
+
+#next-button {
+    background-color: white;
+    text-align: center;
+    font-size: 1.4vw;
+    border-radius: 0.5vw;
+    border: 3px solid;
+    width: 15vw;
+    height: 2.5vw;
+    margin-top: 2.5vw;
+    margin-left: 5.5vw;
+}
+
+#next-button:hover {
+    background-color: #fac03d;
+    transform: scale(1.1);    
+}
+
+.piggy-with-your-name {
+    float: left;
+    margin-top: 2vw;
+    margin-left: 3vw;
+    width: 37vw;
+    height: auto;
+}
+
+.piggy-with-your-name img {
+    width: 100%;
+    height: auto;
+}
+
+.yes-button-div {
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 700px;
+}
+
+.yes-button {
+    background-color: white;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 0.3em;
+    border: 3px solid;
+    width: 250px;
+    height: 40px;
+}
+
+.background-coin-piggy {
+    float: left;
+    width: 50vw;
+    height: auto;
+    margin-top: 5vw;
+    margin-left: -1vw;
+}
+
+.background-coin-piggy img {
+    width: 45vw;
+}
+
+/*#background-coin-piggy {
+    background-image: url(/images/Coin\ Piggy\ -\ Background.png);
+    background-repeat: no-repeat;
+    background-position: 0vw 5vw;
+}*/
+
+.goal-name-div {
+    position: absolute;
+    width: 26vw;
+    height: auto;
+    margin-top: 9vw;
+    margin-left: 50vw;
+}
+
+.goal-div {
+    position: absolute;
+    width: 26vw;
+    height: auto;
+    margin-top: 9vw;
+    margin-left: 50vw;
+}
+
+.goal-font {       
+    margin-left: 0.5vw;
+    width: 25vw;
+    height: 10vw;
+}
+
+.goal-font img {
+    margin-top: -2.5vw;
+    width: 100%;
+    height: auto;
+}
+
+.goal-name-div input {
+    background-color: #ffa3b2;
+    width: 22vw;
+    height: 2.2vw;
+    border-radius: 0.7vw;
+    border: 0.3vw solid;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 1.5vw;
+    text-align: center;
+    font-size: 0.9vw;
+    font: bold;
+    margin-left: 1.2vw;      
+}
+
+
+
+#next-button-goal-name {
+    background-color: white;
+    text-align: center;
+    font-size: 1.4vw;
+    border-radius: 0.3vw;
+    border: 3px solid;
+    width: 15vw;
+    height: 2.5vw;
+    margin-top: 2.5vw;
+    margin-left: 5.5vw;
+}
+
+#next-button-goal-name:hover {
+    background-color: #fac03d;
+    transform: scale(1.1);
+}
+
+.goal-div p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2vw;
+    margin-left: 3vw;    
+}
+
+#user-name {  
+    position: absolute;    
+    font-size: 1.8vw;
+    font-family: fantasy;
+    margin-top: 11vw;
+    margin-left: 8vw;
+    transform: rotate(-15deg);    
+}
+
+.how-long-div {
+    position: absolute;
+    margin-left: 730px;
+    margin-top: 150px;
+}
+
+#confirm-name-button {
+    background-color: lightgray;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 0.3em;
+    border: 3px solid;
+    width: 150px;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 85px;
+}
+
+.wrapper {
+    position: relative;
+}
+
+
+#goal-name-p {
+    position: absolute;    
+    font-size: 1.5vw;
+    font-family: fantasy;
+    margin-top: 11vw;
+    margin-left: 8vw;
+    transform: rotate(-15deg);
+}
+
+
+/**//**//**//**//**/ SLIDER /**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+.slide-container {
+    width: 100%; 
+    font-family: fantasy;
+    font-size: 1.5vw;
+}
+
+input[type=range] {
+    height: 0;
+    -webkit-appearance: none;
+    margin: 1vw 0;
+    width: 100%;
+}
+input[type=range]:focus {
+    outline: #ffa3b2;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.5vw;
+    cursor: pointer;
+    animate: 0.2s;
+   /* box-shadow: 0px 0px 0px #000000;*/
+    background: black;
+    border-radius: 1px;
+    border: 0px solid #ffa3b2;
+}
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: none;
+    height: 3vw;
+    width: 3vw;
+    border-radius: 40px;
+    background-image: url(/images/Slider\ Coin.png); 
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -1.2vw;
+}/*
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #000000;
+}/*
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #000000;
+    border-radius: 1px;
+    border: 0px solid #000000;
+}/*
+input[type=range]::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #000000;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #000000;
+    cursor: pointer;
+}
+*/
+        
+
+.slide-container output {
+    font-family: fantasy;
+    font-size: 2.3vw;
+    margin-left: 10vw;  
+    margin-top: 3vw;    
+}
+
+.how-long-div {
+    width: 27vw;
+    height: auto;
+    margin-left: 50vw;
+}
+
+
+#number-of-months {
+    height: 4.5vw;
+    width: 4.5vw;
+    font-size: 3vw;
+    font-weight: 900;
+    font-family: fantasy;
+    background-color: #ffa3b2;
+    border-radius: 0.3em;
+    border: 4px solid;
+    margin-top: 0.6vw;
+    margin-left: 7vw;
+    text-align: center;
+}
+
+.month-div label {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.how-long-div p {
+    margin-top: 0.5vw;
+    margin-left: 2.5vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2vw;   
+}
+
+.tempo-font {
+    width: 22vw;
+    height: auto;
+    margin-left: 2.8vw;
+}
+
+.tempo-font img {
+    width: 100%;
+    height: auto;
+}
+
+#next-button-month {
+    background-color: white;
+    text-align: center;
+    font-size: 1.4vw;
+    border-radius: 0.3em;
+    border: 3px solid;
+    width: 15vw;
+    height: 2.5vw;
+    margin-top: 2.5vw;
+    margin-left: 6.8vw;
+}
+
+#next-button-month:hover {
+    background-color: #fac03d;
+    transform: scale(1.1);    
+}
+
+.result-body {
+    background: linear-gradient(90deg, #ffa3b2 35vw, white 0)    
+}
+
+.final-piggy {    
+    float: left;
+    width: 27vw;
+    margin-left: 4vw;
+    margin-top: 8.2vw;
+}
+
+.final-piggy img {
+    width: 100%;
+    height: auto;
+}
+
+.wrapper-div-final {
+    position: relative;
+    
+}
+
+#lets-go-name {  
+    position: absolute;    
+    font-size: 2vw;
+    font-family: fantasy;
+    margin-top: 13vw;
+    margin-left: 12.5vw;
+    transform: rotate(-20deg);    
+}
+
+#print-button {
+    position: absolute;
+    background-color: white;
+    text-align: center;
+    font-size: 1vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 0.3em;
+    border: 2px solid;
+    width: 15vw;
+    height: 2.5vw; 
+    margin-top: 38vw;
+    margin-left: -20.5vw;
+}
+
+#print-button:hover {
+    background-color: #fac03d;
+    transform: scale(1.05);
+}
+
+
+#result-div {
+    width: 56vw;
+    height: 89vh;
+    position: absolute;
+    margin-top: 10vh;
+    margin-left: 37vw; 
+    /*background-image: url(/images/coin-mountain.png);
+    background-repeat: no-repeat;
+    background-position: 100% 84%;*/   
+}
+
+.images-div {
+    position: absolute;
+    display: inline-block;
+    margin-top: 0.3vh;
+    margin-left: 2.6vw;
+    width: 32vw;
+    height: 18.3vh;    
+    border: 3px solid #000000;
+    border-radius: 0.9em;  
+}
+
+.sua-meta-font {
+    position: absolute;
+    margin-top: 2.5vh;
+    margin-left: 1.5vw;
+}
+
+.sua-meta-font img {
+    width: 3vw;
+    height: auto;
+}
+
+.edit-goal {
+    position: absolute;
+    margin-left: 35.7vw;
+    margin-top: 0.7vh;
+}
+
+.edit-goal img {
+    width: 7.3vw;
+    height: 9.2vh;
+}
+
+.edit-goal:hover {
+    transform: scale(1.05);
+}
+
+.edit-time {    
+    position: absolute;
+    margin-left: 35.7vw;
+    margin-top: 10.5vh;
+}
+
+.edit-time img {
+    width: 7.3vw;
+    height: 9.2vh;
+}
+
+.edit-time:hover {
+    transform: scale(1.05);
+}
+
+.new-piggy-button {    
+    position: absolute;
+    display: inline-block;
+    margin-left: 43.7vw;
+    margin-top: 0.3vh;
+}
+
+.new-piggy-button img {
+    width: 13vw;
+    height: 20vh;
+}
+
+.new-piggy-button:hover {
+    transform: scale(1.05);
+}    
+
+.target-div {
+    width: 5vw;
+    height: auto;
+    display: inline-block;
+    margin-top: 0.8vh;
+    margin-left: 4.5vw;    
+}
+.target-div img {
+    width: 100%;
+    height: auto;
+}
+
+.coins-div {    
+    width: 5vw;
+    height: auto;
+    display: inline-block;
+    margin-top: 0.8vh;
+    margin-left: 4vw;    
+}
+
+.coins-div img {
+    width: 100%;
+    height: auto;
+}
+
+.clock-div {   
+    width: 5vw;
+    height: auto;
+    display: inline-block;
+    margin-top: 0.8vh;
+    margin-left: 4vw;    
+}
+
+.clock-div img {
+    width: 100%;
+    height: auto;
+}
+
+/*.target-div .target-img {
+    margin-left: 60px;    
+}
+
+.coins-div .coins-img {
+    margin-left: 50px;
+}
+
+.clock-div .clock-img {
+    margin-left: 50px;
+}*/
+
+.image-result-label {    
+    width: 31.5vw;
+    height: 8vh;   
+    margin-top: -1.1vw;    
+    font-family: fantasy;    
+}
+
+.target-label {
+    display: inline-block;    
+    width: 10.3vw;
+    height: 2.7vh;
+    text-align: center;
+    margin-left: 1.4vw;
+    font-size: 1.25vw;
+}
+
+.coins-label {
+    display: inline-block;    
+    width: 7.3vw;
+    height: 2.7vh;
+    margin-left: 0.6vw;
+    text-align: center;
+    font-size: 1.25vw;
+}
+
+.clock-label {    
+    display: inline-block;    
+    width: 6vw;
+    height: 2.7vh;
+    text-align: center;
+    margin-left: 2.3vw;
+    font-size: 1.25vw;
+}
+
+.image-result-div {
+    margin-top: -4.5vh;
+    font-family: fantasy;
+    width: 31.5vw;
+    height: 6vh;
+}
+
+
+#goal-name-result {  
+    display: inline-block;    
+    width: 10.3vw;
+    height: 2.7vh;
+    text-align: center;
+    margin-left: 1.4vw;
+    font-size: 1.1vw;       
+}
+
+#goal-result {     
+    display: inline-block;
+    width: 7.3vw;
+    height: 2.7vh;
+    margin-left: 0.6vw;
+    text-align: center;
+    font-size: 1.1vw;
+}
+
+#time-result {  
+    display: inline-block;
+    width: 6vw;
+    height: 2.7vh;
+    margin-left: 2.3vw;
+    text-align: center;
+    font-size: 1.1vw;
+}
+
+#contribution-buttons {
+    width: 55.7vw;
+    height: 5vh;
+    position: absolute;
+    margin-left: 0vw;
+    margin-top: 23vh;    
+}
+
+#contribution-buttons button {
+    background-color: white;
+    text-align: center;
+    font-size: 1.8vmin;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 0.3vw;
+    border: 0.2vw solid;
+    width: 17vw;
+    height: 5.2vh;      
+}
+
+#contribution-buttons button:hover {
+    background-color: #ffa3b2;
+    transform: scale(1.05);
+    font-weight: 900;
+    font-size: 0.96vw;
+    color: white;
+    border: solid black 0.2vw;
+}
+
+#progressive-contributions {
+    margin-left: 2.6vw;
+}
+
+#progressive-contributions:hover {
+    background-color: #ffa3b2;
+    transform: scale(1.05);
+    font-weight: 900;
+    font-size: 0.96vmin;
+    color: white;
+    border: solid black 2px;
+}
+
+#daily-contributions {
+    margin-left: 0.4vw;
+}
+
+#daily-contributions:hover {
+    background-color: #ffa3b2;
+    transform: scale(1.05);
+    font-weight: 900;
+    font-size: 0.96vw;
+    color: white;
+    border: solid black 2px;
+}
+
+#monthly-contributions {
+    margin-left: 0.4vw;
+}
+
+#monthly-contributions:hover {
+    background-color: #ffa3b2;
+    transform: scale(1.05);
+    font-weight: 900;
+    font-size: 0.96vmin;
+    color: white;
+    border: solid black 2px;
+}
+
+#coin-mountain {
+    width: 57vw;
+    position: absolute;
+    margin-top: 51vh;
+}
+
+#coin-mountain img {
+    width: 100%;
+    height: auto;
+}
+
+#payments {          
+    position: absolute;
+    margin-left: 3vw;
+    margin-top: 31vh;
+    width: 50vw;
+    height: 50vh;
+    columns: 3 12vh;     
+}
+
+#payments-daily {
+    position: absolute;
+    margin-top: 33vh;
+    margin-left: 9vw;
+    width: 37vw;
+    height: 15vh;     
+}
+
+#payments-daily p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 35vw;
+    height: auto;
+    font-size: 1.6vw;
+    margin-left: 1vw;
+    margin-top: 6vh;
+}
+
+#payments-progressive {
+    position: absolute;
+    margin-left: 5vw;
+    margin-top: 30vh;
+    width: 48vw;
+    height: 48vh;
+}
+
+ul {
+    margin-top: 1vw;
+    columns: 3 12vw;
+}
+
+li {
+    margin-left: 0vw;
+    list-style-type: none;
+    list-style-image: url(/images/output-onlinepngtools.png);
+    padding-top: 01vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4vw;    
+}
+
