@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PIGGY ©</title>
+        <link rel="icon" type="image/x-icon" href="images/Piggy Logo.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device=width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css"> 
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+
+    <body>
+
+
+        <div class="top-nav">
+            <a class="white-piggy-font" href="index.html">
+                <img src="images/White Piggy Font.png">   
+            </a>
+         <!---   <a class="white-login" href="login.html">
+                <img src="images/White Login Button.png">
+            </a>
+            -->
+        </div>
+
+    <div>
+
+    </div>
+
+    <div class="wrapper-div">
+        <div class="piggy-with-your-name">
+            <img src="/images/Are You Ready Piggy.png">                     
+        </div>
+
+        <div class="display-goal-name-div">
+            <p id="goal-name-p"></p> 
+        </div>
+    </div>
+
+
+    <div class="goal-div">
+        <div class="goal-font">
+            <img src="images/Black Meta Font.png" >            
+        </div>
+        <div>
+            <p>Quanto você quer juntar nesta meta?</p>
+        </div>
+
+        <div class="slide-container">
+            <input type="range" id="myRange" min="500" max="100000" value="500" step="500" class="slider" 
+            oninput="this.nextElementSibling.value = this.value">
+
+            <output>500</output>
+        </div>
+        
+        <div>
+            <a href="howlong.html" >
+                <button id="next-button" type="submit">NEXT</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+
+        const displayGoalName = document.getElementById("goal-name-p");
+        const storedGoalName = sessionStorage.getItem("MetaName");
+
+        console.log(storedGoalName);
+
+        window.addEventListener("load", () => {
+            displayGoalName.innerHTML =  "Legal! Agora, de<br> quanto voce precisa<br>para alcançar a meta<br>" + storedGoalName + "?";
+
+        });
+
+        
+        nextButton = document.getElementById("next-button");
+
+        nextButton.addEventListener("click", () => {
+            const goal = document.getElementById("myRange").value;
+            if(goal !== "") {
+                sessionStorage.setItem("meta", goal);
+                } else {
+                alert("Por favor, escolha uma meta")}
+        });     
+
+
+    </script>
+
+
+
+
+    </body>
+</html>

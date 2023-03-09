@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PIGGY ©</title>
+        <link rel="icon" type="image/x-icon" href="images/Piggy Logo.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device=width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css"> 
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+
+    <body>
+
+
+        <div class="top-nav">
+            <a class="white-piggy-font" href="index.html">
+                <img src="images/White Piggy Font.png">   
+            </a>
+         <!---   <a class="white-login" href="login.html">
+                <img src="images/White Login Button.png">
+            </a>
+            -->
+        </div>
+
+        <div class="wrapper-div">
+            <div class="piggy-with-your-name">
+                <img src="/images/Are You Ready Piggy.png">                     
+            </div>
+    
+            <div class="user-name-div">
+                <p id="user-name"></p> 
+            </div>
+        </div>
+
+        <div class="goal-name-div">
+            <div class="goal-font">
+                <img src="images/Black Meta Font.png" >            
+            </div>
+    
+            <div>
+                <input type="text" id="goal-name" placeholder="Nome da Meta (Ex: Carro/Viagem/etc)" required>
+            </div>
+            <div>
+                <a href="setgoal.html" >
+                    <button id="next-button-goal-name" type="submit">NEXT</button>
+                </a>
+            </div>
+        </div>
+
+
+
+        <script>
+
+        const displayName = document.getElementById("user-name");
+        const storedName = sessionStorage.getItem("name");
+
+        console.log(storedName);
+
+        window.addEventListener("load", () => {
+            displayName.innerHTML =  "Hey, " + storedName + " ! <br>Vamos dar um nome<br>para sua meta?";
+
+        });
+
+        goalNameNextButton = document.getElementById("next-button-goal-name");
+
+            goalNameNextButton.addEventListener("click", () => {
+                const goalName = document.getElementById("goal-name").value;
+                if(goalName !== "") {
+                    sessionStorage.setItem("MetaName", goalName);
+                    } else {
+                    alert("Por favor, preencha seu nome")}
+            });
+
+
+
+        </script>   
+
+    </body>
+
+</html>

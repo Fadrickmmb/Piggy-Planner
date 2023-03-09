@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PIGGY ©</title>
+        <link rel="icon" type="image/x-icon" href="images/Piggy Logo.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device=width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>      
+    </head>
+
+    <body class="result-body" >
+
+        <div class="top-nav">
+            <a class="white-piggy-font" href="index.html">
+                <img src="images/White Piggy Font.png">   
+            </a>
+         <!---   <a class="white-login" href="login.html">
+                <img src="images/White Login Button.png">
+            </a>
+            -->
+        </div> 
+            
+
+        <div class="wrapper-div-final" >
+            <div class="final-piggy">
+                <img src="/images/Last Piggy.png">                     
+            </div>
+
+            <div class="lets-go-div">
+                <p id="lets-go-name"></p>
+            </div>
+
+            <button id="print-button"> 
+                IMPRIMIR META
+            </button>
+            
+        </div>
+            
+
+            <div id="result-div">
+
+                <div class="images-div">
+                    
+                    <div class="target-div">
+                        <img class="target-img" src="/images/target.png">
+                    </div>
+                    <div class="coins-div">         
+                        <img class="coins-img" src="/images/coins.png">
+                    </div>
+                    <div class="clock-div">            
+                        <img class="clock-img" src="/images/clock.png"> 
+                    </div>
+
+                    <div class="image-result-label">
+                        <p  class="target-label" >Meta</p>
+                        <p  class="coins-label" >R$</p>
+                        <p  class="clock-label" >Em</p>
+                    </div>
+
+                    <div class="image-result-div">
+                        <p id="goal-name-result"></p>
+                        <p id="goal-result"></p>
+                        <p id="time-result"></p>
+                    </div>
+                    
+                </div>
+
+                <div class="sua-meta-font">
+                    <img src="/images/Sua Meta Fundo Branco.png">
+                </div>
+
+                <a class="edit-goal" href="setgoal.html">
+
+                    <img src="/images/Editar Valor.png">
+
+                </a>
+
+                <a class="edit-time" href="howlong.html">
+
+                    <img src="/images/Editar Tempo.png">
+
+                </a>
+
+                <a class="new-piggy-button" href="index.html" >
+                
+                    <img src="/images/New Piggy Button.png" alt="">                        
+                    
+                </a>
+
+                <img src="/images/coin-mountain.png" id="coin-mountain">
+
+                <div id="contribution-buttons">
+                    <button id="progressive-contributions">APORTES PROGRESSIVOS</button>
+                    <button id="daily-contributions">QUANTO JUNTAR POR DIA</button>
+                    <button id="monthly-contributions">QUANTO JUNTAR POR MÊS</button>
+
+                </div>
+
+                <div id="payments-progressive">
+
+                </div>
+
+                <div id="payments">              
+
+                </div>
+
+                <div id="payments-daily">
+                    
+
+                </div>
+
+
+            </div>
+        
+        
+            
+        <script>
+
+            /*DISPLAY NAME*/
+
+            const displayName = document.getElementById("lets-go-name");
+            const storedName = sessionStorage.getItem("name");
+
+            console.log(storedName);
+
+            window.addEventListener("load", () => {
+                displayName.innerHTML =  "Let's Go,<br> " + storedName + "!"
+            });
+
+        /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+            /*DISPLAY GOAL NAME*/
+
+            const displayGoalName = document.getElementById("goal-name-result");
+            const storedGoalName = sessionStorage.getItem("MetaName");
+
+            console.log(storedGoalName);
+
+            window.addEventListener("load", () => {
+                displayGoalName.innerHTML = storedGoalName
+            });
+
+        /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+            /* DISPLAY GOAL*/
+
+            const displayGoal = document.getElementById("goal-result");
+            const storedGoal = parseInt(sessionStorage.getItem("meta")); 
+            //const storedGoal = sessionStorage.getItem("meta");
+
+            console.log(storedGoal);
+
+            window.addEventListener("load", () => {
+                displayGoal.innerHTML = storedGoal
+            });
+
+        /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+            /*DISPLAY TIME*/
+            
+            const displayTime = document.getElementById("time-result");
+            //const storedTime = sessionStorage.getItem("tempo");
+            const storedTime = parseInt(sessionStorage.getItem("tempo"));
+            
+
+            console.log(storedTime);
+
+            window.addEventListener("load", () => {
+                displayTime.innerHTML = storedTime + " meses"
+            }); 
+            
+        
+        /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+            /* MONTHLY RESULT SHEET */
+       
+           
+            var calc =  parseInt(sessionStorage.getItem("meta")) / parseInt(sessionStorage.getItem("tempo"));           
+            var monthlyCalc = Math.floor(calc);
+            
+                        
+            for (let i = 0; i < storedTime; i++) {
+                var list = document.createElement("li");
+                list.innerText = "R$: " + `${monthlyCalc}`;
+                document.getElementById("payments").appendChild(list);
+                console.log(monthlyCalc)
+            }
+
+           // console.log(typeof storedGoal);
+           // console.log(typeof storedTime);
+
+        /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+            /* DAILY RESULT SHEET */
+            
+            var dailyCalc = Math.floor(calc / 30);
+
+           /* for (let i = 0; i < storedTime; i++) {*/
+                var dailyList = document.createElement("p");
+                dailyList.innerHTML = "Você terá que juntar <strong>R$: " + `${dailyCalc}` + "</strong> por dia, por <strong>" + storedTime*30 +" dias</strong>";
+                document.getElementById("payments-daily").appendChild(dailyList);
+                console.log(dailyCalc)
+            /*}*/
+
+            /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+
+        /* PROGRESSIVE RESULT SHEET */
+
+          var aporte01 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.002 * 100) / 100;
+          var aporte02 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.005 * 100) / 100;
+          var aporte03 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.0075 * 100) / 100;
+          var aporte04 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.01 * 100) / 100;
+          var aporte05 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.0125 * 100) / 100;
+          var aporte06 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.015 * 100) / 100;
+          var aporte07 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.0175 * 100) / 100;
+          var aporte08 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.019 * 100) / 100;
+          var aporte09 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.02 * 100) / 100;
+          var aporte10 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.0225 * 100) / 100;
+          var aporte11 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.025 * 100) / 100;
+          var aporte12 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.0275 * 100) / 100;
+          var aporte13 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.03 * 100) / 100;
+          var aporte14 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.0315 * 100) / 100;
+          var aporte15 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.0325 * 100) / 100;
+          var aporte16 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.035 * 100) / 100;
+          var aporte17 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.036 * 100) / 100;
+          var aporte18 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.0375 * 100) / 100;
+          var aporte19 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.04 * 100) / 100;
+          var aporte20 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.0425 * 100) / 100;
+          var aporte21 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.045 * 100) / 100;
+          var aporte22 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.046 * 100) / 100;
+          var aporte23 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.0475 * 100) / 100;
+          var aporte24 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.05 * 100) / 100;
+          var aporte25 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.052 * 100) / 100;
+          var aporte26 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.055 * 100) / 100;
+          var aporte27 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.056 * 100) / 100;
+          var aporte28 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.0575 * 100) / 100;
+          var aporte29 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.06 * 100) / 100;
+          var aporte30 = Math.round(parseInt(sessionStorage.getItem("meta")) * 0.0625 * 100) / 100;
+
+          var progList = document.createElement("ul");
+
+          var item01 = document.createElement("li");
+          var item02 = document.createElement("li");
+          var item03 = document.createElement("li");
+          var item04 = document.createElement("li");
+          var item05 = document.createElement("li");
+          var item06 = document.createElement("li");
+          var item07 = document.createElement("li");
+          var item08 = document.createElement("li");
+          var item09 = document.createElement("li");
+          var item10 = document.createElement("li");
+          var item11 = document.createElement("li");
+          var item12 = document.createElement("li");
+          var item13 = document.createElement("li");
+          var item14 = document.createElement("li");
+          var item15 = document.createElement("li");
+          var item16 = document.createElement("li");
+          var item17 = document.createElement("li");
+          var item18 = document.createElement("li");
+          var item19 = document.createElement("li");
+          var item20 = document.createElement("li");
+          var item21 = document.createElement("li");
+          var item22 = document.createElement("li");
+          var item23 = document.createElement("li");
+          var item24 = document.createElement("li");
+          var item25 = document.createElement("li");
+          var item26 = document.createElement("li");
+          var item27 = document.createElement("li");
+          var item28 = document.createElement("li");
+          var item29 = document.createElement("li");
+          var item30 = document.createElement("li");
+
+          item01.innerText = `R$: ` + `${aporte01}`;
+          item02.innerText = `R$: ` + `${aporte02}`;
+          item03.innerText = `R$: ` + `${aporte03}`;
+          item04.innerText = `R$: ` + `${aporte04}`;
+          item05.innerText = `R$: ` + `${aporte05}`;
+          item06.innerText = `R$: ` + `${aporte06}`;
+          item07.innerText = `R$: ` + `${aporte07}`;
+          item08.innerText = `R$: ` + `${aporte08}`;
+          item09.innerText = `R$: ` + `${aporte09}`;
+          item10.innerText = `R$: ` + `${aporte10}`;
+          item11.innerText = `R$: ` + `${aporte11}`;
+          item12.innerText = `R$: ` + `${aporte12}`;
+          item13.innerText = `R$: ` + `${aporte13}`;
+          item14.innerText = `R$: ` + `${aporte14}`;
+          item15.innerText = `R$: ` + `${aporte15}`;
+          item16.innerText = `R$: ` + `${aporte16}`;
+          item17.innerText = `R$: ` + `${aporte17}`;
+          item18.innerText = `R$: ` + `${aporte18}`;
+          item19.innerText = `R$: ` + `${aporte19}`;
+          item20.innerText = `R$: ` + `${aporte20}`;
+          item21.innerText = `R$: ` + `${aporte21}`;
+          item22.innerText = `R$: ` + `${aporte22}`;
+          item23.innerText = `R$: ` + `${aporte23}`;
+          item24.innerText = `R$: ` + `${aporte24}`;
+          item25.innerText = `R$: ` + `${aporte25}`;
+          item26.innerText = `R$: ` + `${aporte26}`;
+          item27.innerText = `R$: ` + `${aporte27}`;
+          item28.innerText = `R$: ` + `${aporte28}`;
+          item29.innerText = `R$: ` + `${aporte29}`;
+          item30.innerText = `R$: ` + `${aporte30}`;
+
+          progList.appendChild(item01);
+          progList.appendChild(item02);
+          progList.appendChild(item03);
+          progList.appendChild(item04);
+          progList.appendChild(item05);
+          progList.appendChild(item06);
+          progList.appendChild(item07);
+          progList.appendChild(item08);
+          progList.appendChild(item09);
+          progList.appendChild(item10);
+          progList.appendChild(item11);
+          progList.appendChild(item12);
+          progList.appendChild(item13);
+          progList.appendChild(item14);
+          progList.appendChild(item15);
+          progList.appendChild(item16);
+          progList.appendChild(item17);
+          progList.appendChild(item18);
+          progList.appendChild(item19);
+          progList.appendChild(item20);
+          progList.appendChild(item21);
+          progList.appendChild(item22);
+          progList.appendChild(item23);
+          progList.appendChild(item24);
+          progList.appendChild(item25);
+          progList.appendChild(item26);
+          progList.appendChild(item27);
+          progList.appendChild(item28);
+          progList.appendChild(item29);
+          progList.appendChild(item30);
+
+          document.getElementById("payments-progressive").appendChild(progList);            
+
+
+
+
+        /**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**//**/
+
+            /* TOGGLE DIVS */
+
+            const toggleToDaily = document.getElementById("daily-contributions");
+            const toggleToMonthly = document.getElementById("monthly-contributions");
+            const toggleProgressive = document.getElementById("progressive-contributions");
+
+            const payments = document.getElementById("payments");
+            const dailyPayments = document.getElementById("payments-daily");
+            const progPayments = document.getElementById("payments-progressive");
+            const coinMountain = document.getElementById("coin-mountain");
+
+            const hide = el => el.style.setProperty("display", "none");
+            const show = el => el.style.setProperty("display", "block");
+
+            hide(dailyPayments);
+            hide(payments);
+            hide(coinMountain);
+            toggleProgressive.style.backgroundColor = '#ffa3b2';
+            toggleProgressive.style.fontWeight = 'bold';
+            toggleProgressive.fontSize = '12px';
+            toggleProgressive.style.color = 'white';
+            toggleProgressive.style.border = 'solid black 2px';
+
+            toggleToDaily.addEventListener("click", () => {
+                hide(payments);
+                hide(progPayments);
+                show(dailyPayments);
+                show(coinMountain);
+                toggleToDaily.style.backgroundColor = '#ffa3b2'
+                toggleToDaily.style.fontWeight = "900"
+                toggleToDaily.style.fontSize = "12px"
+                toggleToDaily.style.color = 'white'
+                toggleToDaily.style.border = 'solid black 2px'
+                toggleToMonthly.style.backgroundColor = 'white'
+                toggleToMonthly.style.fontWeight = "normal"
+                toggleToMonthly.style.fontSize = "12px"
+                toggleToMonthly.style.color = 'black'               
+                toggleToMonthly.style.border = 'solid black 2px'                                                      
+                toggleProgressive.style.backgroundColor = 'white'
+                toggleProgressive.style.fontWeight = "normal"
+                toggleProgressive.style.fontSize = "12px"
+                toggleProgressive.style.color = 'black'               
+                toggleProgressive.style.border = 'solid black 2px'
+                             
+            })
+
+            toggleToMonthly.addEventListener("click", () => {
+                hide(dailyPayments);
+                hide(coinMountain);
+                hide(progPayments);
+                show(payments);
+                toggleToMonthly.style.backgroundColor = '#ffa3b2'
+                toggleToMonthly.style.fontWeight = "900"
+                toggleToMonthly.style.fontSize = "12px"
+                toggleToMonthly.style.color = 'white'
+                toggleToMonthly.style.border = 'solid black 2px' 
+                toggleToDaily.style.backgroundColor = 'white'                
+                toggleToDaily.style.fontWeight = "normal"
+                toggleToDaily.style.fontSize = "12px"
+                toggleToDaily.style.color = 'black'               
+                toggleToDaily.style.border = 'solid black 2px'
+                toggleProgressive.style.backgroundColor = 'white'
+                toggleProgressive.style.fontWeight = "normal"
+                toggleProgressive.style.fontSize = "12px"
+                toggleProgressive.style.color = 'black'               
+                toggleProgressive.style.border = 'solid black 2px'
+            })
+
+            toggleProgressive.addEventListener("click", () => {
+                hide(dailyPayments);
+                hide(coinMountain);
+                hide(payments);
+                show(progPayments);
+                toggleProgressive.style.backgroundColor = '#ffa3b2'
+                toggleProgressive.style.fontWeight = '900'
+                toggleProgressive.fontSize = '12px'
+                toggleProgressive.style.color = 'white'
+                toggleProgressive.style.border = 'solid black 2px'
+                toggleToDaily.style.backgroundColor = 'white'
+                toggleToDaily.style.fontWeight = "normal"
+                toggleToDaily.style.fontSize = "12px"
+                toggleToDaily.style.color = 'black'               
+                toggleToDaily.style.border = 'solid black 2px'
+                toggleToMonthly.style.backgroundColor = 'white'
+                toggleToMonthly.style.fontWeight = "normal"
+                toggleToMonthly.style.fontSize = "12px"
+                toggleToMonthly.style.color = 'black'               
+                toggleToMonthly.style.border = 'solid black 2px'
+            })   
+            
+        /**//**//**//**//**//**//**//**//**//**//*PRINT CONTENT/**//**//**//**//**//**//**//**//**//**//**/    
+
+            const print = document.getElementById("print-button");
+
+            print.addEventListener("click", () => {
+                window.print();
+            });
+           
+        </script>
+    </body>
+
+</html>

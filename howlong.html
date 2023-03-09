@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PIGGY ©</title>
+        <link rel="icon" type="image/x-icon" href="images/Piggy Logo.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device=width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    </head>
+
+    <body>
+
+
+        <div class="top-nav">
+            <a class="white-piggy-font" href="index.html">
+                <img src="images/White Piggy Font.png">   
+            </a>
+         <!---   <a class="white-login" href="login.html">
+                <img src="images/White Login Button.png">
+            </a>
+            -->
+        </div>
+
+        <div class="background-coin-piggy">
+            <img src="/images/Coin Piggy - Background.png" alt="">
+        </div>
+
+        <div class="how-long-div">
+
+            <div class="tempo-font">
+                <img src="/images/Tempo Font.png">
+            </div>
+
+            <div>
+                <p>Em quanto tempo você quer atingir a meta?</p>
+            </div>
+
+            <div class="month-div">
+                <label><input id="number-of-months" type="number" value="1" min="1" max="60" step="1"> MESES</label>
+            </div>
+
+            <div>
+                <a href="result.html">
+                    <button id="next-button-month" >NEXT</button>
+                </a>
+            </div>
+
+
+        </div>
+
+
+
+
+        <script>
+
+            nextButton = document.getElementById("next-button-month");
+    
+            nextButton.addEventListener("click", () => {
+                const time = document.getElementById("number-of-months").value;
+                if(time !== "") {
+                    sessionStorage.setItem("tempo", time);
+                    } else {
+                    alert("Por favor, escolha uma data")}
+            });     
+    
+    
+        </script>
+
+
+    </body>
+
+
+
+
+
+
+</html>

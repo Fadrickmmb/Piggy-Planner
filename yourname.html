@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PIGGY ©</title>
+        <link rel="icon" type="image/x-icon" href="images/Piggy Logo.png">
+        <meta name="viewport" content="width=device=width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="index.css"> 
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>       
+    </head>
+
+    <body>
+        <div class="top-nav">
+            <a class="white-piggy-font" href="index.html">
+                <img src="images/White Piggy Font.png">   
+            </a>       
+        </div>
+
+        <div class="hey-piggy">
+            <img src="/images/Hey Piggy.png">
+        </div>
+
+        <div class="your-name">
+            <div class="your-name-font">
+                <img src="/images/Your Name Font.png">
+            </div>
+
+            <div>
+                <form>
+                    <input id="your-name-input" type="text">
+                </form>
+            </div>
+
+           <!--- <div class="confirm-name-div">
+                <button id="confirm-name-button" type="submit" >Confirmar</button>
+            </div>
+            -->
+
+            <div>
+                <a href="setgoalname.html">
+                    <button id="next-button" type="submit">NEXT</button>
+                </a>
+            </div>
+
+        </div>
+
+        <script>
+
+            nextButton = document.getElementById("next-button");
+
+            nextButton.addEventListener("click", () => {
+                const name = document.getElementById("your-name-input").value;
+                if(name !== "") {
+                    sessionStorage.setItem("name", name);
+                    } else {
+                    alert("Por favor, preencha seu nome")}
+            });
+        
+        //  function setName() {
+        //        var name = document.getElementById("your-name-input").value;
+        //       localStorage.setItem("name", name);
+        //    }
+        </script>
+
+
+
+
+
+
+    </body>
+
+
+</html>
